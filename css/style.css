@@ -47,3 +47,57 @@ body {
 .clickable:hover {
     background-color: rgb(245, 6, 6, 0.1);
 }
+
+.widget-wrapper {
+    padding: 10px;
+    display: flex;
+    text-align: center;
+    display: none;
+}
+
+.wrapper {
+    width: 20%;
+    padding: 20px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wind-direction-arrow {
+    width: 40%;
+    margin: 25px auto;
+}
+
+.wind-direction-arrow img {
+    width: 80%;
+}
+
+.west {
+    transform: rotate(180deg);
+}
+
+.north {
+    transform: rotate(-90deg);
+}
+
+.north-east {
+    transform: rotate(-45deg);
+}
+
+.north-west {
+    transform: rotate(-135deg);
+}
+
+.south {
+    transform: rotate(90deg);
+}
+
+.south-west {
+    transform: rotate(135deg);
+}
+
+.south-east {
+    transform: rotate(45deg);
+}
