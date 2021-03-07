@@ -1,14 +1,48 @@
+class Day {
+    day;
+    temp;
+    windDirection;
+    windSpeed;
+    type;
+    constructor(day, temp, windDirection, windSpeed, type) {
+        this.day = day;
+        this.temp = temp;
+        this.windDirection = windDirection;
+        this.windSpeed = windSpeed;
+        this.type = type;
+    }
+}
+
+const days = [
+    new Day('Mon', 22, 'north - east', 10, 'sunnny'),
+    new Day('Tue', 14, 'north - west', 14, 'rainy'),
+    new Day('Wed', 14, 'north - west', 14, 'rainy'),
+    new Day('Thu', 14, 'north - west', 14, 'rainy'),
+    new Day('Fri', 14, 'north - west', 14, 'rainy'),
+    new Day('Sat', 14, 'north - west', 14, 'rainy'),
+    new Day('Sun', 14, 'north - west', 14, 'rainy'),
+]
+
+const daysWrapper = $(".days-wrapper");
+
 const weatherData = {
     tempUnit: 'C',
     windSpeedUnit: 'm / s',
-    days: [
-        { day: 'Mon', temp: 22, windDirection: 'north - east', windSpeed: 10, type: 'sunny' },
-        { day: 'Tue', temp: 14, windDirection: 'north - west', windSpeed: 14, type: 'rainy' },
-        { day: 'Wed', temp: 17, windDirection: 'west', windSpeed: 20, type: 'cloudy' },
-        { day: 'Thu', temp: 14, windDirection: 'south - east', windSpeed: 22, type: 'cloudy' },
-        { day: 'Fri', temp: 27, windDirection: 'east', windSpeed: 20, type: 'windy' },
-        { day: 'Sat', temp: 10, windDirection: 'south', windSpeed: 15, type: 'cloudy' },
-        { day: 'Sun', temp: 13, windDirection: 'south - east', windSpeed: 13, type: 'cloudy' },
-
-    ]
 }
+
+showDays = () => {
+    days.forEach(el => {
+        let clickableBox = $("<div>").attr("class", "clickable");
+        let dayTxt = $("<h3>").text(el.day);
+        let dayTemp = $("<h5>").text(el.temp);
+        let tempUnit = $("<p>").text(weatherData.tempUnit);
+        clickableBox.append(dayTxt);
+        clickableBox.append(dayTemp);
+        clickableBox.append(tempUnit);
+        daysWrapper.append(clickableBox);
+    });
+}
+
+
+
+showDays();

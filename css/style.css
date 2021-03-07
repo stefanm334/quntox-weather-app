@@ -10,6 +10,10 @@ body {
     justify-content: center;
 }
 
+.root {
+    width: 100%;
+}
+
 .tittle {
     text-align: center;
     padding-top: 30px;
@@ -19,4 +23,27 @@ body {
     font-weight: normal;
     line-height: 48px;
     margin-bottom: 50px;
+}
+
+.days-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.clickable {
+    width: 150px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid purple;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px gold;
+    background-color: rgb(33, 175, 231, 0.1);
+    cursor: pointer;
+}
+
+.clickable:hover {
+    background-color: rgb(245, 6, 6, 0.1);
 }
