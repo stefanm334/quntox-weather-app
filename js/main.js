@@ -12,24 +12,3 @@ const weatherData = {
 
     ]
 }
-
-var dayList = $('.day-list')
-
-
-
-
-console.log(weatherData.days.length)
-for (let i = 0; i < weatherData.days.length; i++) {
-    var day = $('<div>').attr('class', 'day').attr('id', i)
-    var dayName = $('<div>').attr('class', 'day-name').text(weatherData.days[i].day)
-    var dayTemp = $('<div>').attr('class', 'day-temp').text(weatherData.days[i].temp)
-    var tempMeasuremnt = $('<div>').attr('class', 'measurment').text(weatherData.tempUnit)
-    day.append(dayName)
-    day.append(dayTemp)
-    day.append(tempMeasuremnt)
-
-    dayList.append()
-}
-
-
-var widget = $('.widget')

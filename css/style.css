@@ -5,8 +5,7 @@
 }
 
 body {
-    background-image: url(/img/clear-air-fly-fantastic-travel.jpg);
-    background-size: contain;
+    background-image: url(../img/clear-air-fly-fantastic-travel.jpg);
     display: flex;
     justify-content: center;
 }
@@ -19,14 +18,5 @@ body {
     font-size: 45px;
     font-weight: normal;
     line-height: 48px;
-    margin: 0;
-}
-
-.day-list {
-    display: flex;
-    justify-content: center;
-}
-
-.day {
-    padding: 30px;
+    margin-bottom: 50px;
 }
