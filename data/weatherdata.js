@@ -12,3 +12,6 @@ const weatherData = {
 
     ]
 }
+
+
+module.exports = weatherData;
