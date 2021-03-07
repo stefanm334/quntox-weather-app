@@ -15,12 +15,12 @@ class Day {
 
 const days = [
     new Day("Mon", 22, "north-west", 10, "sunnny"),
-    new Day("Tue", 14, "north", 14, "rainy"),
-    new Day("Wed", 14, "north-east", 14, "rainy"),
-    new Day("Thu", 14, "east", 14, "rainy"),
-    new Day("Fri", 14, "south-east", 14, "rainy"),
-    new Day("Sat", 14, "south", 14, "rainy"),
-    new Day("Sun", 14, "south-west", 14, "rainy"),
+    new Day("Tue", 14, "north", 18, "rainy"),
+    new Day("Wed", 32, "north-east", 11, "rainy"),
+    new Day("Thu", 14, "east", 30, "rainy"),
+    new Day("Fri", 18, "south-east", 14, "sunny"),
+    new Day("Sat", 22, "south", 14, "rainy"),
+    new Day("Sun", 31, "south-west", 24, "cloudy"),
 ];
 
 const root = $(".root");
@@ -40,7 +40,7 @@ convertTemp = temp => {
     if (tempUnitType === "C") {
         return temp;
     } else if (tempUnitType === "K") {
-        temp = temp - 273.15;
+        temp = temp + 273.15;
         return temp;
     }
 };
@@ -56,7 +56,7 @@ convertWindSpeedUnitType = () => {
 }
 
 calcWindSpeed = windSpeed => {
-    if (windSpeedUnitType === "m/s") {
+    if (windSpeedUnitType === "km/h") {
         return windSpeed * 3.6;
     }
     return windSpeed;
@@ -138,7 +138,7 @@ openWidget = element => {
     const windSpeed = $("<div>").addClass("wind-speed").text(calcWindSpeed(element.windSpeed));
     const windSpeedUnit = $("<h3>")
         .addClass("wind-speed-unit")
-        .text(weatherData.windSpeedUnit);
+        .text(windSpeedUnitType);
     const switchBtn = $("<button>").text("Switch").on("click", () => {
         convertWindSpeedUnitType(element.windSpeed);
     });
@@ -172,6 +172,7 @@ openWidget = element => {
     widgetWrapper.append(windSpeedWrapper);
     widgetWrapper.append(windDirectionWrapper);
     widgetWrapper.append(typeWrapper);
+
     root.append(widgetWrapper);
     widgetWrapper.fadeIn(500);
     widgetWrapper.css("display", "flex");
